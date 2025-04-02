@@ -1,0 +1,36 @@
+{
+  "name": "namaste-react-bharat",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Bharat Singhani",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharatsinghani4/namaste-react.git"
+  },
+  "keywords": [
+    "react",
+    "html",
+    "css",
+    "javascript",
+    "namste-react"
+  ],
+  "author": "Bharat Singhani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharatsinghani4/namaste-react/issues"
+  },
+  "homepage": "https://github.com/bharatsinghani4/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
