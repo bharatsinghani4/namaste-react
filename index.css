@@ -69,3 +69,8 @@
 .res-card h4.cuisines {
   height: 54px;
 }
+
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
+}
