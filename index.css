@@ -1,8 +1,8 @@
 .header,
-.nav-items>ul {
+.nav-items,
+.nav-items > ul {
   align-items: center;
   display: flex;
-
 }
 
 .header {
@@ -10,13 +10,13 @@
   justify-content: space-between;
 }
 
-.nav-items>ul {
+.nav-items > ul {
   list-style-type: none;
   margin: 0;
   padding: 0 20px;
 }
 
-.nav-items>ul>li {
+.nav-items > ul > li {
   font-size: 20px;
   /* margin: 10px; */
   padding: 10px;
@@ -30,14 +30,17 @@
   padding: 10px;
 }
 
-.res-container {
+.res-container,
+.shimmer-cards {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.res-card {
+.res-card,
+.shimmer-card {
+  background: #f0f0f0;
   border: 1px solid transparent;
   height: 400px;
   padding: 5px;
@@ -70,7 +73,31 @@
   height: 54px;
 }
 
+.filter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .filter-btn {
   cursor: pointer;
   margin: 10px;
+}
+
+.shimmer-btn {
+  background: rgb(240, 240, 240);
+  height: 20px;
+  margin: 10px;
+  width: 150px;
+}
+
+.login-btn {
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 5px 0px;
+  width: 85px;
+}
+
+.search-box {
+  width: 300px;
 }
