@@ -1,3 +1,71 @@
-#heading {
-  color: red;
+.header,
+.nav-items>ul {
+  align-items: center;
+  display: flex;
+
+}
+
+.header {
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+.nav-items>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.nav-items>ul>li {
+  font-size: 20px;
+  /* margin: 10px; */
+  padding: 10px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.res-card {
+  border: 1px solid transparent;
+  height: 400px;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 200px;
+}
+
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.res-logo {
+  border: 1px solid black;
+  height: 50%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.res-card h3 {
+  height: 44px;
+  margin: 5px 0 0;
+}
+
+.res-card h4 {
+  margin: 10px 0 0;
+}
+
+.res-card h4.cuisines {
+  height: 54px;
 }
