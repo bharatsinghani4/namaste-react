@@ -42,7 +42,7 @@
 .shimmer-card {
   background: #f0f0f0;
   border: 1px solid transparent;
-  height: 400px;
+  height: 420px;
   padding: 5px;
   transition: all 0.3s ease-in-out;
   width: 200px;
@@ -55,7 +55,7 @@
 
 .res-logo {
   border: 1px solid black;
-  height: 50%;
+  height: 200px;
   object-fit: cover;
   width: 100%;
 }
@@ -70,7 +70,7 @@
 }
 
 .res-card h4.cuisines {
-  height: 54px;
+  height: 72px;
 }
 
 .filter {
