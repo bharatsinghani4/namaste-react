@@ -43,18 +43,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="seacrh">
+      <div className="flex items-center justify-between p-3">
+        <div>
           <input
             type="text"
             placeholder="Search for restaurant"
-            className="search-box"
+            className="border-black border-solid border w-80 px-2 py-0.75"
             value={searchText}
             onChange={onSearchInputChangeHandler}
           />
           <button
             type="button"
-            className="search-btn"
+            className="px-4 py-1 bg-green-200 rounded-sm ml-2 cursor-pointer"
             onClick={onSearchClickHandler}
           >
             Search
@@ -62,13 +62,13 @@ const Body = () => {
         </div>
         <button
           type="button"
-          className="filter-btn"
+          className="px-4 py-1 bg-gray-300 rounded-sm cursor-pointer"
           onClick={onClickHandler}
         >
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="p-3 flex flex-wrap gap-6">
         {filteredRestaurants.map((restaurant) => (
           <Link
             key={restaurant.info.id}
