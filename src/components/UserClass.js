@@ -1,4 +1,5 @@
 import React from "react";
+
 import Shimmer from "./Shimmer";
 
 class UserClass extends React.Component {
