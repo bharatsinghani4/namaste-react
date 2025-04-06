@@ -21,7 +21,7 @@ const useFetchRestaurantCards = () => {
     );
   };
 
-  return { allRestaurants, filteredRestaurants };
+  return [allRestaurants, filteredRestaurants, setFilteredRestaurants];
 };
 
 export default useFetchRestaurantCards;

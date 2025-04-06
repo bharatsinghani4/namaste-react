@@ -5,11 +5,13 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import useFetchRestaurantCards from "../utils/useFetchRestaurantCards";
 
 import Shimmer from "./Shimmer";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 
 const Body = () => {
-  const { allRestaurants, filteredRestaurants } = useFetchRestaurantCards();
+  const [allRestaurants, filteredRestaurants, setFilteredRestaurants] =
+    useFetchRestaurantCards();
   const [searchText, setSearchText] = useState("");
+  const TopRatedRestaurant = withPromotedLabel(RestaurantCard);
 
   const onSearchInputChangeHandler = (event) => {
     setSearchText(event.target.value);
@@ -27,7 +29,7 @@ const Body = () => {
       allRestaurants.length > 0 &&
       allRestaurants.filter((restaurant) => restaurant?.info?.avgRating > 4.5);
 
-    setAllRestaurants(topRatedRestaurantsArr);
+    setFilteredRestaurants(topRatedRestaurantsArr);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -43,7 +45,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="flex items-center justify-between p-3">
+      <div className="flex items-center justify-between p-3 mt-3">
         <div>
           <input
             type="text"
@@ -74,7 +76,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant.info} />
+            {restaurant.info.avgRating >= 4.5 ? (
+              <TopRatedRestaurant resData={restaurant.info} />
+            ) : (
+              <RestaurantCard resData={restaurant.info} />
+            )}
           </Link>
         ))}
       </div>

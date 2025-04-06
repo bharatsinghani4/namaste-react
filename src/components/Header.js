@@ -20,33 +20,33 @@ const Header = () => {
           alt="Namaste Food Logo"
         />
       </div>
-      <div className="flex items-center">
-        <ul className="flex">
-          <li className="px-3">{onlineStatus ? "Online 🟢" : "Offline 🔴"}</li>
-          <li className="px-3">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="px-3">
-            <Link to="/about">About Us</Link>
-          </li>
-          <li className="px-3">
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li className="px-3">
-            <Link to="/grocery">Grocery</Link>
-          </li>
-          <li className="px-3">
-            <Link to="/cart">Cart</Link>
-          </li>
-        </ul>
-        <button
-          type="button"
-          className="px-4 py-1 bg-green-200 rounded-sm ml-2 cursor-pointer"
-          onClick={onClickHandler}
-        >
-          {btnText}
-        </button>
-      </div>
+      <ul className="flex items-center">
+        <li className="px-3">{onlineStatus ? "Online 🟢" : "Offline 🔴"}</li>
+        <li className="px-3">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="px-3">
+          <Link to="/about">About Us</Link>
+        </li>
+        <li className="px-3">
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li className="px-3">
+          <Link to="/grocery">Grocery</Link>
+        </li>
+        <li className="px-3">
+          <Link to="/cart">Cart</Link>
+        </li>
+        <li>
+          <button
+            type="button"
+            className="px-4 py-1 bg-green-200 rounded-sm ml-2 cursor-pointer"
+            onClick={onClickHandler}
+          >
+            {btnText}
+          </button>
+        </li>
+      </ul>
     </div>
   );
 };
