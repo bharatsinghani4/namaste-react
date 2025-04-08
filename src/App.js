@@ -1,6 +1,10 @@
-import React, { lazy, Suspense, useState, useEffect } from "react";
+import React, { lazy, Suspense } from "react";
+import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+import appStore from "./utils/appStore";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
@@ -10,31 +14,19 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
-import UserContext from "./utils/userContext";
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
-  const [userName, setUserName] = useState("");
-
-  useEffect(() => {
-    // Dummy API Call
-    const data = {
-      name: "Bharat Singhani",
-    };
-
-    setUserName(data.name);
-  }, []);
-
   return (
-    <UserContext.Provider value={{ LoggedInUser: userName }}>
+    <Provider store={appStore}>
       <div id="app">
         <Header />
         <Outlet />
         <Footer />
       </div>
-    </UserContext.Provider>
+    </Provider>
   );
 };
 

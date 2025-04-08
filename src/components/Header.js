@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const cartItems = useSelector((store) => store.cart.items);
 
   const onClickHandler = () =>
     setBtnText((text) => (text == "Login" ? "Logout" : "Login"));
@@ -35,7 +37,7 @@ const Header = () => {
           <Link to="/grocery">Grocery</Link>
         </li>
         <li className="px-3">
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart({cartItems.length})</Link>
         </li>
         <li>
           <button

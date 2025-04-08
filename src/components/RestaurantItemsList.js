@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
-const RestaurantItemsList = ({ items }) => {
+const RestaurantItemsList = ({ items, isCartPage = false }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="p-4">
       {items.map((item) => {
@@ -18,7 +26,9 @@ const RestaurantItemsList = ({ items }) => {
 
         return (
           <div
-            className="py-4 border-t border-t-gray-200 flex justify-between w-full"
+            className={`py-4 border-t border-t-gray-200 flex justify-between w-full ${
+              isCartPage && "items-center"
+            }`}
             key={id}
           >
             <div className="flex-1 min-h-[176px]">
@@ -56,17 +66,20 @@ const RestaurantItemsList = ({ items }) => {
                   alt={name}
                 />
               )}
-              <div className="absolute w-[75%] h-[56px] left-[50%] translate-x-[-50%] -bottom-9 text-center">
-                <button
-                  type="button"
-                  className="bg-white font-bold text-lg text-green-600 border border-gray-400 rounded-lg px-4 py-2 w-full leading-none cursor-pointer"
-                >
-                  ADD
-                </button>
-                {variantsV2?.variantGroups?.length && (
-                  <p className="text-gray-500 text-sm">Customisable</p>
-                )}
-              </div>
+              {!isCartPage && (
+                <div className="absolute w-[75%] h-[56px] left-[50%] translate-x-[-50%] -bottom-9 text-center">
+                  <button
+                    type="button"
+                    className="bg-white font-bold text-lg text-green-600 border border-gray-400 rounded-lg px-4 py-2 w-full leading-none cursor-pointer"
+                    onClick={() => handleAddItem(item)}
+                  >
+                    ADD
+                  </button>
+                  {variantsV2?.variantGroups?.length && (
+                    <p className="text-gray-500 text-sm">Customisable</p>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         );

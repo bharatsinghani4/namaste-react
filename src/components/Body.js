@@ -41,7 +41,7 @@ const Body = () => {
       </h1>
     );
 
-  return !filteredRestaurants.length ? (
+  return filteredRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -71,7 +71,7 @@ const Body = () => {
         </button>
       </div>
       <div className="p-3 flex flex-wrap gap-6">
-        {filteredRestaurants.map((restaurant) => (
+        {filteredRestaurants?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
