@@ -23,7 +23,12 @@ const Header = () => {
         />
       </div>
       <ul className="flex items-center">
-        <li className="px-3">{onlineStatus ? "Online 🟢" : "Offline 🔴"}</li>
+        <li
+          data-testid="online-status"
+          className="px-3"
+        >
+          {onlineStatus ? "Online 🟢" : "Offline 🔴"}
+        </li>
         <li className="px-3">
           <Link to="/">Home</Link>
         </li>

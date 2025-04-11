@@ -23,11 +23,6 @@ const RestaurantMenu = () => {
     totalRatingsString,
     sla,
   } = resInfo?.data?.cards[2]?.card?.card?.info;
-  const itemCards =
-    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card?.itemCards ||
-    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
-      ?.card?.itemCards;
   const itemCategories =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (card) =>
@@ -36,7 +31,10 @@ const RestaurantMenu = () => {
     );
 
   return (
-    <div className="max-w-4xl my-10 mx-auto p-4 border border-gray-400 rounded-md">
+    <div
+      data-testid="restaurant-menu"
+      className="max-w-4xl my-10 mx-auto p-4 border border-gray-400 rounded-md"
+    >
       <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
         <div className="flex-auto mr-4">
           <h1 className="font-bold text-4xl">{name}</h1>

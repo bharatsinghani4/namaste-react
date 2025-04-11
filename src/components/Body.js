@@ -48,6 +48,7 @@ const Body = () => {
       <div className="flex items-center justify-between p-3 mt-3">
         <div>
           <input
+            data-testid="search-input"
             type="text"
             placeholder="Search for restaurant"
             className="border-black border-solid border w-80 px-2 py-0.75"

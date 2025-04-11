@@ -26,6 +26,7 @@ const RestaurantItemsList = ({ items, isCartPage = false }) => {
 
         return (
           <div
+            data-testid="menu-item"
             className={`py-4 border-t border-t-gray-200 flex justify-between w-full ${
               isCartPage && "items-center"
             }`}

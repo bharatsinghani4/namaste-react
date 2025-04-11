@@ -30,50 +30,43 @@ const AppLayout = () => {
   );
 };
 
-const appRouter = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <AppLayout />,
-      children: [
-        {
-          path: "/",
-          element: <Body />,
-        },
-        {
-          path: "/about",
-          element: <About />,
-        },
-        {
-          path: "/contact",
-          element: <Contact />,
-        },
-        {
-          path: "/grocery",
-          element: (
-            <Suspense fallback={<Shimmer />}>
-              <Grocery />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/cart",
-          element: <Cart />,
-        },
-        {
-          path: "/restaurant/:id",
-          element: <RestaurantMenu />,
-        },
-      ],
-      errorElement: <Error />,
-    },
-  ],
+const appRouter = createBrowserRouter([
   {
-    future: {
-      v7_relativeSplatPath: true,
-    },
-  }
-);
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
